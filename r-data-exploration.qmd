@@ -2,3 +2,38 @@
 title: "r-data-exploration"
 format: html
 ---
+```{r}
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+
+```{r}
+names(diamonds)
+dim(diamonds)
+summary(diamonds)
+head(diamonds)
+tail(diamonds)
+skimr::skim(diamonds)
+```
+```{r}
+ggpair_diam <- GGally::ggpairs(diamonds)
+ggpair_diam
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, y = price)) + 
+  geom_point()
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat)) + 
+  geom_histogram()
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = clarity, 
+                            y = price)) + 
+  geom_boxplot()
+```
+
